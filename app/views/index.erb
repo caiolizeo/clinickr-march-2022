@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <title><%= @title %></title>
+    <link href='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css' rel='stylesheet' />
+  </head>
+
+
+  <body class='container'>
+    <p>O que tem para jantar?</p>
+    <form action='cast' method='post'>
+      <ul class='unstyled'>
+        <% Opcoes.each do |id, text| %>
+          <li>
+            <label class='radio'>
+              <input type='radio' name='voto' value='<%= id %>' id='vote_<%= id %>' />
+              <%= text %>
+            </label>
+          </li>
+        <% end %>
+      </ul>
+      <button type='submit' class='btn btn-primary'>Votar!</button>
+    </form>
+  </body>
+
+  
+</html>
