@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+  table, th, td {
+    border:1px solid black;
+  }
+</style>
+
+<body>
+  <head>
+    <meta charset='UTF-8' />
+    <title>Resultado dos dados</title>
+    <link href='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css' rel='stylesheet' />
+  </head>
+  <body class='container'>
+    <h1><%= @titulo %></h1>
+    <table>
+      
+      <% @data.each do |x| %>
+        <tr>
+          <% x.each do |y| %>
+            <td><%= y %></td>
+          <% end %>
+        </tr>      
+      <% end %>
+    
+    </table>
+  </body>
+</html>

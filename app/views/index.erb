@@ -8,19 +8,15 @@
 
 
   <body class='container'>
-    <p>O que tem para jantar?</p>
-    <form action='cast' method='post'>
-      <ul class='unstyled'>
-        <% Opcoes.each do |id, text| %>
-          <li>
-            <label class='radio'>
-              <input type='radio' name='voto' value='<%= id %>' id='vote_<%= id %>' />
-              <%= text %>
-            </label>
-          </li>
-        <% end %>
-      </ul>
-      <button type='submit' class='btn btn-primary'>Votar!</button>
+    <h1>Enviar dados</h1>
+
+    <h3><%= @error %></h3>
+    <form action='table' method='post'>
+      <label for="csv">Selecione um arquivo CSV</label>
+      <input type="file" id="csv" name="csv">
+      <br>
+      <br>
+      <button type='submit' class='btn btn-primary'>Enviar</button>
     </form>
   </body>
 

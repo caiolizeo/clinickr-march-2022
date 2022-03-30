@@ -1,23 +1,29 @@
-class ClinickrApp < Sinatra::Base
+require 'sinatra'
+require 'byebug'
+require './app/converter'
 
-  Opcoes = {
-    'HAM' => 'Hambúrger',
-    'PIZ' => 'Pizza',
-    'SUS' => 'Sushi',
-    'LAM' => 'Lámen',
-  }
+
+
+class ClinickrApp < Sinatra::Base
+  set :bind, '0.0.0.0'
+
 
   get '/' do
-    @title = 'Votação'    
+    @title = 'Vamos votar'    
     erb :index
   end
 
 
-  post '/cast' do
-    puts params
-    @titulo = 'Obrigada por votar!'
-    @voto  = params['voto']
-    erb :cast
+  post '/table' do
+    begin
+      @data = Converter.to_array(params['csv'])
+      @titulo = 'Seus dados estão aqui!'
+      erb :table
+    rescue
+      @error = 'Arquivo inválido'
+      erb :index
+    end
   end
 
+  run! 
 end
