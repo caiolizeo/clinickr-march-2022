@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: clinickr
+  pool: 2
+  username: postgres
+  password: postgres
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: clinickr
+  pool: 2
+  username: postgres
+  password: postgres
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: clinickr
+  pool: 2
+  username: postgres
+  password: postgres

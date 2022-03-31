@@ -1,11 +1,18 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    activemodel (5.2.7)
+      activesupport (= 5.2.7)
+    activerecord (5.2.7)
+      activemodel (= 5.2.7)
+      activesupport (= 5.2.7)
+      arel (>= 9.0)
     activesupport (5.2.7)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    arel (9.0.0)
     byebug (11.1.3)
     concurrent-ruby (1.1.10)
     diff-lcs (1.5.0)
@@ -22,6 +29,7 @@ GEM
       rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
+    rake (13.0.6)
     rspec (3.11.0)
       rspec-core (~> 3.11.0)
       rspec-expectations (~> 3.11.0)
@@ -41,6 +49,9 @@ GEM
       rack (~> 2.2)
       rack-protection (= 2.2.0)
       tilt (~> 2.0)
+    sinatra-activerecord (2.0.25)
+      activerecord (>= 4.1)
+      sinatra (>= 1.0)
     thread_safe (0.3.6)
     tilt (2.0.10)
     tzinfo (1.2.9)
@@ -50,12 +61,15 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  activerecord
   activesupport (~> 5.0, >= 5.0.0.1)
   byebug
   puma
   rack-test
+  rake
   rspec
   sinatra
+  sinatra-activerecord
 
 BUNDLED WITH
    2.2.32
