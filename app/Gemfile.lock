@@ -22,6 +22,7 @@ GEM
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
     nio4r (2.5.8)
+    pg (1.3.4)
     puma (5.6.2)
       nio4r (~> 2.0)
     rack (2.2.3)
@@ -64,6 +65,7 @@ DEPENDENCIES
   activerecord
   activesupport (~> 5.0, >= 5.0.0.1)
   byebug
+  pg (~> 1.3, >= 1.3.4)
   puma
   rack-test
   rake
